@@ -8,8 +8,8 @@
  * @size: size of array
  */
 
- void bubble_sort(int *array, size_t size)
- {
+void bubble_sort(int *array, size_t size)
+{
 	int temp;
 	size_t i = size;
 	size_t j;
@@ -27,4 +27,4 @@
 			}
 		}
 	}
- }
+}

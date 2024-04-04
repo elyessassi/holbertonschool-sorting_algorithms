@@ -10,31 +10,18 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *temp;
-	listint_t *sorted = NULL;
-	listint_t *head;
+	listint_t *temp, *current;
 
-	while (*list != NULL)
+	if (*list == NULL)
+	{
+		return ;
+	}
+
+	while ((*list)->next != NULL)
 	{
 		*list = (*list)->next;
-		if (sorted == NULL)
-		{
-			sorted = *list;
-			head = sorted;
-		}
-		else
-		{
-			sorted = sorted->next;
-			while (sorted->prev != NULL)
-			{
-				if (sorted->n < sorted->prev->n)
-				{
-					if (sorted->prev->prev == NULL)
-					{
-						
-					}
-				}
-			}
-		}
+		current = *list
+		while ()
+
 	}
 }

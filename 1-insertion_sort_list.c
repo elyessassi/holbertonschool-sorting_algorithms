@@ -10,23 +10,31 @@
 
 void insertion_sort_list(listint_t **list)
 {
-	int i;
-	int temp;
-	int j;
+	listint_t *temp;
+	listint_t *sorted = NULL;
+	listint_t *head;
 
-	for (i = 1; i < strlen(*list); i++)
+	while (*list != NULL)
 	{
-		temp = list->next->n;
-		j = list ;
-		while (j > 0)
+		*list = (*list)->next;
+		if (sorted == NULL)
 		{
-			if (temp < *list[j] )
+			sorted = *list;
+			head = sorted;
+		}
+		else
+		{
+			sorted = sorted->next;
+			while (sorted->prev != NULL)
 			{
-				*list[i] = *list[j];
-				*list[j] = temp;
-				print_list(*list);
+				if (sorted->n < sorted->prev->n)
+				{
+					if (sorted->prev->prev == NULL)
+					{
+						
+					}
+				}
 			}
-			j--;
 		}
 	}
 }

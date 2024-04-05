@@ -22,7 +22,7 @@ void selection_sort(int *array, size_t size)
 		current_min = array[start_pt];
 		for (curr_elem_idx = start_pt ; curr_elem_idx < size ; curr_elem_idx++)
 		{
-			if (array[curr_elem_idx] < current_min )
+			if (array[curr_elem_idx] < current_min)
 			{
 				current_min = array[curr_elem_idx];
 				current_min_idx = curr_elem_idx;

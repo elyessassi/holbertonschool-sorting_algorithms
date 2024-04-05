@@ -3,7 +3,7 @@
 #include <string.h>
 
 /**
- * selection_sort_list - selection sorts an array
+ * selection_sort - selection sorts an array
  *
  * @array: array to be sorted
  * @size: size of array

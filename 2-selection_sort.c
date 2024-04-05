@@ -10,22 +10,29 @@
 
 void selection_sort(int *array, size_t size)
 {
-	size_t i;
-	size_t j;
-	int temp;
-	int **ptr;
+	int current_min;
+	size_t current_min_idx;
+	size_t start_pt;
+	size_t current_element_idx;
+	size_t temp;
 
-	for (i = 0; i < size; i++)
+	for (start_pt = 0; start_pt < size; start_pt++)
 	{
-		temp = array[i];
-		for (j = i ; j < size - 1 ; j++)
+		current_min = array[start_pt];
+		for (current_element_idx = start_pt ; current_element_idx < size ; current_element_idx++)
 		{
-			if (array[j + 1] < array[j])
+			if (array[current_element_idx] < current_min )
 			{
-				**ptr = *array[j+1];
+				current_min = array[current_element_idx];
+				current_min_idx = current_element_idx;
 			}
 		}
-		
-		print_array(array, size);
+		if (current_min != array[start_pt])
+		{
+			temp = array[start_pt];
+			array[start_pt] = array[current_min_idx];
+			array[current_min_idx] = temp;
+			print_array(array, size);
+		}
 	}
 }

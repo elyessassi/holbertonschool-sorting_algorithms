@@ -1,27 +1,41 @@
-#include <stdio.h>
 #include "sort.h"
-#include <string.h>
-
 /**
- * insertion_sort_list - insertion sorts an array
- *
- * @list: array to be sorted
+ * insertion_sort_list - sorts a doubly linked
+ * list of integers in ascending order
+ * @list: list of integers to be sorted
  */
+
 
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *temp, *current;
+	listint_t *slot, *prev, *curr;
 
-	if (*list == NULL)
+	if (!list)
+		return;
+
+	curr = (*list)->next;
+	while (curr)
 	{
-		return ;
-	}
+		slot = curr;
+		prev = curr->prev;
+		while (prev && slot->n < prev->n)
+		{
+			if (slot->next)
+				slot->next->prev = prev;
 
-	while ((*list)->next != NULL)
-	{
-		*list = (*list)->next;
-		current = *list
-		while ()
+			prev->next = slot->next;
+			slot->prev = prev->prev;
+			prev->prev = slot;
+			slot->next = prev;
 
+			if (!slot->prev)
+				(*list) = slot;
+			else
+				slot->prev->next = slot;
+
+			prev = slot->prev;
+			print_list(*list);
+		}
+		curr = curr->next;
 	}
 }
